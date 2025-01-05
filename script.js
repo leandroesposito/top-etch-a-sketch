@@ -66,12 +66,27 @@ gridContainer.addEventListener("mouseover", (event) => {
         return;
     }
     increaseElementOpacity(target, 0.1);
+    randomizeElementColor(target)
 });
 
 function increaseElementOpacity(element, amount) {
     let opacity = Number.parseFloat(element.style.opacity);
     opacity += amount;
     element.style.opacity = opacity;
+}
+
+function randomizeElementColor(element) {
+    element.style.backgroundColor = getRandomHslColor();
+}
+
+function getRandomHslColor() {
+    let hue = getRandomNumber(360);
+
+    return `hsl(${hue}, 100%, 50%)`;
+}
+
+function getRandomNumber(max) {
+    return Math.floor(Math.random() * max);
 }
 
 generateGrid(20);

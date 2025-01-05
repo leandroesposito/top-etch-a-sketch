@@ -47,7 +47,7 @@ function getMinDimensionElement(element) {
 }
 
 function setTileWidthCssProperty(numColumns) {
-    document.documentElement.style.setProperty("--tile-width-percentage", `${(100 / numColumns) - 1}%`);
+    document.documentElement.style.setProperty("--tile-width-percentage", `${(100 / numColumns)}%`);
 }
 
 

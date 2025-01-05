@@ -30,9 +30,10 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    border: 5px solid black;
+    box-sizing: border-box;
 }
 
 .tile {
-    border: 1px solid red;
     flex: 1 1 var(--tile-width-percentage);
 }

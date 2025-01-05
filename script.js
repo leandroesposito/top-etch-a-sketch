@@ -89,4 +89,4 @@ function getRandomNumber(max) {
     return Math.floor(Math.random() * max);
 }
 
-generateGrid(20);
+generateGrid(16);

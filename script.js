@@ -53,12 +53,15 @@ function setTileWidthCssProperty(numColumns) {
 newGridBtn.addEventListener("click", () => {
     let newGridNumColums = null;
     do {
-        newGridNumColums = +prompt("Insert new number of columns for the square grid", 10);
-
-    } while (!Number.isInteger(newGridNumColums));
+        newGridNumColums = +prompt("Insert new number of columns for the square grid between 1 and 100)", 16);
+    } while (!isBetween1and100(newGridNumColums));
 
     generateGrid(newGridNumColums);
 });
+
+function isBetween1and100(number) {
+    return 1 <= number && number <= 100;
+}
 
 gridContainer.addEventListener("mouseover", (event) => {
     const target = event.target;

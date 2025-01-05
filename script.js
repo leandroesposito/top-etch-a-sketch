@@ -24,8 +24,6 @@ function generateTilesFragment(numTiles) {
 function generateTileElement() {
     const tileElement = document.createElement("div");
     tileElement.classList.add("tile");
-    //ADD EVENT LISTENER
-
     return tileElement;
 }
 
@@ -50,9 +48,6 @@ function setTileWidthCssProperty(numColumns) {
     document.documentElement.style.setProperty("--tile-width-percentage", `${(100 / numColumns)}%`);
 }
 
-
-generateGrid(20);
-
 newGridBtn.addEventListener("click", () => {
     let newGridNumColums = null;
     do {
@@ -62,3 +57,5 @@ newGridBtn.addEventListener("click", () => {
 
     generateGrid(newGridNumColums);
 })
+
+generateGrid(20);

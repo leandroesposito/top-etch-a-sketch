@@ -1,5 +1,7 @@
 const gridContainer = document.querySelector(".grid-container");
 const gridSection = document.querySelector(".grid-section");
+const newGridBtn = document.querySelector(".new-grid");
+
 function generateGrid(numColumns) {
     const totalTiles = numColumns * numColumns;
     const tilesFragment = generateTilesFragment(totalTiles);
@@ -51,3 +53,12 @@ function setTileWidthCssProperty(numColumns) {
 
 generateGrid(20);
 
+newGridBtn.addEventListener("click", () => {
+    let newGridNumColums = null;
+    do {
+        newGridNumColums = +prompt("Insert new number of columns for the square grid", 10);
+
+    } while (!Number.isInteger(newGridNumColums));
+
+    generateGrid(newGridNumColums);
+})

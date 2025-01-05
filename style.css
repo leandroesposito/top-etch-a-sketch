@@ -1,4 +1,5 @@
 :root {
+    /*arbitrary number % to initialize the property*/
     --tile-width-percentage: 49%;
 }
 

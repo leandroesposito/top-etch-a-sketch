@@ -24,6 +24,8 @@ function generateTilesFragment(numTiles) {
 function generateTileElement() {
     const tileElement = document.createElement("div");
     tileElement.classList.add("tile");
+    tileElement.style.opacity = "0";
+    tileElement.style.backgroundColor = "black";
     return tileElement;
 }
 
@@ -56,6 +58,20 @@ newGridBtn.addEventListener("click", () => {
     } while (!Number.isInteger(newGridNumColums));
 
     generateGrid(newGridNumColums);
-})
+});
+
+gridContainer.addEventListener("mouseover", (event) => {
+    const target = event.target;
+    if (!target.classList.contains("tile")) {
+        return;
+    }
+    increaseElementOpacity(target, 0.1);
+});
+
+function increaseElementOpacity(element, amount) {
+    let opacity = Number.parseFloat(element.style.opacity);
+    opacity += amount;
+    element.style.opacity = opacity;
+}
 
 generateGrid(20);
